@@ -119,7 +119,7 @@ export function getDailyDoses(weeklyDose, nrDays, posibleDoses, cumulDiff=0) {
 
 // generate shedule of doses
 export function getDosesSchedule(dailyDoses, startDate) {
-	const d = startDate
+	const d = new Date(startDate.getTime()) // new clean copy
 	let dosesSchedule = []
 	for (let i = 0; i < dailyDoses.length; i++) {
 		let shedulDose = {

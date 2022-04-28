@@ -22,8 +22,9 @@ app.use(
 //-----------------   ROUTERS    ----------------------
 app.get('/node/doses/', (req, res) => {
 
-	const defData = getDefaultData()
+	let defData = getDefaultData()
 	res.send(getWarfarinDosesSchedule(defData))
+	// defData.startDate = null
 })
 
 

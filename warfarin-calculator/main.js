@@ -24,7 +24,6 @@ export default function getWarfarinDosesSchedule(data) {
 
 	// dosesSch ex. [{date: 2020-04-27T00:00:00.000Z, mg: 1.5, cumulDiff: 0, medPart: [object, object]}]
 	const dosesSchedule = getDosesSchedule(dailyDoses, data.startDate)
-
 	showScheduleInConsole(dosesSchedule, data.weeklyDose, medicines)
 
 	return dosesSchedule
