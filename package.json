@@ -1,0 +1,32 @@
+{
+  "name": "warfarin-calendar-api",
+  "version": "1.0.0",
+  "description": "Warfarin dose calendar maker api",
+  "main": "server.js",
+  "type": "module",
+
+  "scripts": {
+    "start": "nodemon server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MrStonkus/warfarin-calendar-api.git"
+  },
+  "keywords": [
+    "warfarin",
+    "dose",
+    "calendar"
+  ],
+  "author": "Valdas Stonkus (MrStonkus)",
+  "license": "Apache-2.0",
+  "bugs": {
+    "url": "https://github.com/MrStonkus/warfarin-calendar-api/issues"
+  },
+  "homepage": "https://github.com/MrStonkus/warfarin-calendar-api#readme",
+  "devDependencies": {
+    "nodemon": "^2.0.15"
+  },
+  "dependencies": {
+    "express": "^4.18.0"
+  }
+}
