@@ -20,8 +20,7 @@ app.use(
 
 
 //-----------------   ROUTERS    ----------------------
-app.get('/node/doses/', (req, res) => {
-
+app.get('/node/warfarin-calendar/', (req, res) => {
 	let defData = getDefaultData()
 	res.send(getWarfarinDosesSchedule(defData))
 	// defData.startDate = null
@@ -29,7 +28,7 @@ app.get('/node/doses/', (req, res) => {
 
 
 // insert to database
-app.post('/node/doses/', (req, res) => {
+app.post('/node/warfarin-calendar/', (req, res) => {
 	// number = req.body.number
 	res.json({ message: 'ok' })
 })
