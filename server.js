@@ -1,8 +1,8 @@
 'use strict'
 
-import getWarfarinDosesSchedule from './warfarin-calculator/main.js'
 import express from 'express'
-import getDefaultData from './warfarin-calculator/data.js'
+import getWarfarinDosesSchedule from './warfarin-calculator/main.js'
+import {getDefaultData, getPostHelp} from './warfarin-calculator/data.js'
 
 
 // const cors = require('cors')
@@ -21,16 +21,16 @@ app.use(
 
 //-----------------   ROUTERS    ----------------------
 app.get('/node/warfarin-calendar/', (req, res) => {
-	let defData = getDefaultData()
-	res.send(getWarfarinDosesSchedule(defData))
+	res.send(getPostHelp())
 	// defData.startDate = null
 })
 
 
 // insert to database
 app.post('/node/warfarin-calendar/', (req, res) => {
-	// number = req.body.number
-	res.json({ message: 'ok' })
+	const data = req.body
+	data.startDate = new Date(data.startDate) // convert text data to date object
+	res.send(getWarfarinDosesSchedule(data))
 })
 
 

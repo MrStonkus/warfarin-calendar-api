@@ -5,9 +5,10 @@ import {
 	getDailyDoses,
 	getDosesSchedule,
 	showScheduleInConsole,
-} from './Functions/doseGenerator.js'
+} from './Functions/warfarinCalcFunctions.js'
 
 export default function getWarfarinDosesSchedule(data) {
+
 
 	//Generator --------------------------------------------------------------
 	const medicines = generateMedicines(data.medArr)
