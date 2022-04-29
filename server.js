@@ -2,7 +2,7 @@
 
 import express from 'express'
 import getWarfarinDosesSchedule from './warfarin-calculator/main.js'
-import {getDefaultData, getPostHelp} from './warfarin-calculator/data.js'
+import {getPostHelp} from './warfarin-calculator/data.js'
 
 
 // const cors = require('cors')
@@ -18,13 +18,11 @@ app.use(
 	})
 )
 
-
 //-----------------   ROUTERS    ----------------------
 app.get('/node/warfarin-calendar/', (req, res) => {
 	res.send(getPostHelp())
 	// defData.startDate = null
 })
-
 
 // insert to database
 app.post('/node/warfarin-calendar/', (req, res) => {
@@ -32,7 +30,6 @@ app.post('/node/warfarin-calendar/', (req, res) => {
 	data.startDate = new Date(data.startDate) // convert text data to date object
 	res.send(getWarfarinDosesSchedule(data))
 })
-
 
 // run server
 app.listen(port, () => {
