@@ -96,7 +96,7 @@ function generatePosibleDosesRecur(
 export function getDaysBetweenDates(startdate, endDate) {
 	const sDMilsecs = new Date(startdate).getTime()
 	const eDMilsecs = new Date(endDate).getTime()
-	return Math.ceil(Math.abs(eDMilsecs - sDMilsecs) / 86400000)
+	return Math.ceil(Math.abs(eDMilsecs - sDMilsecs) / 86400000) + 1
 }
 
 export function getDailyDoses(weeklyDose, nrDays, posibleDoses, cumulDiff = 0) {
@@ -145,8 +145,6 @@ function agregateDrugs(dose) {
 	let aggregatedDrugs = {}
 
 	for (let drug of dose.drugs) {
-		// Return medical by drug.medID
-		// let med = medicines.find((med) => med.id === drug.medID)
 		// Create drug key
 		let key = drug.medID + drug.splitPart
 
