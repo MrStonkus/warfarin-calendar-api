@@ -1,7 +1,7 @@
 let optionsData = {
 	weeklyDose: 40.74,
 	startDate: new Date('2022-04-27'),
-	nrDays: 3,
+	endDate: new Date('2022-04-30'),
 	maxDoseMG: 10,
 	cumulDiff: 0, //cumulativeDifference, default 0 to generate new or set previous day cumu.diff number to generate from existing chedule
 	medArr: [

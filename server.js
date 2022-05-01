@@ -4,9 +4,6 @@ import express from 'express'
 import getWarfarinDosesSchedule from './warfarin-calculator/main.js'
 import {getPostHelp} from './warfarin-calculator/data.js'
 
-
-// const cors = require('cors')
-// const express = require('express')
 const app = express()
 const port = 5000
 
@@ -21,14 +18,11 @@ app.use(
 //-----------------   ROUTERS    ----------------------
 app.get('/node/warfarin-calendar/', (req, res) => {
 	res.send(getPostHelp())
-	// defData.startDate = null
 })
 
 // insert to database
 app.post('/node/warfarin-calendar/', (req, res) => {
-	const data = req.body
-	data.startDate = new Date(data.startDate) // convert text data to date object
-	res.send(getWarfarinDosesSchedule(data))
+	res.send(getWarfarinDosesSchedule(req.body))
 })
 
 // run server

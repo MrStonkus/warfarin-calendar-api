@@ -93,7 +93,13 @@ function generatePosibleDosesRecur(
 	} while (tempDose.mg <= maxDoseMG)
 }
 
-export function getDailyDoses(weeklyDose, nrDays, posibleDoses, cumulDiff=0) {
+export function getDaysBetweenDates(startdate, endDate) {
+	const sDMilsecs = new Date(startdate).getTime()
+	const eDMilsecs = new Date(endDate).getTime()
+	return Math.ceil(Math.abs(eDMilsecs - sDMilsecs) / 86400000)
+}
+
+export function getDailyDoses(weeklyDose, nrDays, posibleDoses, cumulDiff = 0) {
 	// Define daily doses
 	let dailyDoses = []
 	let closestDose
@@ -185,6 +191,3 @@ export function showScheduleInConsole(schDoses, weeklyDose, medicines) {
 		'Difference: ' + (weeklyDose - averageWeeklyConsumption + ' mg./week')
 	)
 }
-		
-		
-		
