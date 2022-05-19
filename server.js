@@ -16,12 +16,12 @@ app.use(
 )
 
 //-----------------   ROUTERS    ----------------------
-app.get('/node/warfarin-calendar/', (req, res) => {
+app.get('/api/inr/', (req, res) => {
 	res.send(getPostHelp())
 })
 
 // insert to database
-app.post('/node/warfarin-calendar/', (req, res) => {
+app.post('/api/inr/', (req, res) => {
 	res.send(getWarfarinDosesSchedule(req.body))
 })
 
